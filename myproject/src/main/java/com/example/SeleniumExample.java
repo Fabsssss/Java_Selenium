@@ -12,63 +12,79 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class SeleniumExample {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		System.setProperty("webdriver.gecko.driver",".\\src\\geckodriver.exe"); // Setting system properties of FirefoxDriver
 		WebDriver driver = new FirefoxDriver(); //Creating an object of FirefoxDriver
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.get("https://twitter.com/home");
-		
-		WebElement d = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]",10);
-	    d.click();
-		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input","animeforlive@proton.me");
-	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div");
-	     
-	    
-	    WebElement a = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input",10);
-	    a.click();
-		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input","animeforli28455");
-	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/div/div");
-	   
-
-		
-		//		driver.quit();	    
-	    
-	   
-	    WebElement b = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input",10);
-	    b.click();
-		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input","AUiHzB3Jo8iCKTCT5B9S");
-	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div");
-	   
-	    List<WebElement> l = driver.findElements(By.xpath("/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div"));
-		if(l.size()> 0) {
-			button_click(driver,"/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div");
-		}
-		
-	    List<WebElement> l1 = driver.findElements(By.xpath("/html/body/div[1]/div/div/div[1]/div/div/div/div/div/div[2]/div[2]/div"));
-		if(l1.size()> 0) {
-			button_click(driver,"/html/body/div[1]/div/div/div[1]/div/div/div/div/div/div[2]/div[2]/div");
-		}
+//		driver.get("https://twitter.com/home");
+//		
+//	
+//		driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]",10).click();
+//		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input","animeforlive@proton.me");
+//	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div");
+//	     
+//	    
+//	    driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input",10).click();
+//		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input","animeforli28455");
+//	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/div/div");
+//	   
+//
+//	    driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input",10).click();
+//		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input","AUiHzB3Jo8iCKTCT5B9S");
+//	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div");
+//
+//	    driver_wait(driver, "/html/body/div[1]/div/div/div[2]/header/div/div/div/div[1]/div[3]/a/div/span/div/div/span/span",10).click();
+//	    
+//	    
+//	    System.out.println("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+//	    Thread.sleep(1000);
+//	    driver_wait(driver, "/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div",10);
+//	    driver_wait(driver, "/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[2]/div/div/div/div/div/div[2]",10).click();
+//	    WebElement test = driver_wait(driver, "/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div[2]/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div[2]/div/div/div/div/label/div[1]/div/div/div/div/div/div[2]/div",10);
+//	    test.click();
+//	    test.sendKeys("test");
+//	    System.out.println("TEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+//	    WebElement file = driver_wait(driver, "/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[3]/div[2]/div[1]/div/div/div/div/div[2]/div[3]/div/div/div[1]/input",10);
+//	    file.sendKeys("C:\\Users\\Fabs\\Desktop\\SD\\gg.png");
 		
 		
-		
-		
-		
-		
-		
-		
-	    //}
-	   
 	    
 	    
 	    
-		//textbox_schreiben(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input","animeforlive@proton.me");
-	    //		driver.findElement(By.name("q")).sendKeys("Browserstack Guide"); //name locator for text box
-//		WebElement searchbutton = driver.findElement(By.name("btnK"));//name locator for google search
-//		searchbutton.click();
+	    driver.get("https://www.facebook.com/profile.php?id=100091907666106");
+	    System.out.println("pquhegrpowejriofvw");
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, 10);
+	    WebElement q = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, '" + "_42ft _4jy0 _al66 _4jy3 _4jy1 selected _51sy" + "')]")));
+	    q.click();
+	    
+	    
+	  //*[@id="u_0_j_OB"]//*[@id="u_0_j_NG"]
+	  
 
 	    
+	    
+	    
+	    driver_wait(driver, "//*[@id=\"email\"]",10).click();
+		textbox_schreiben_xpath(driver, "//*[@id=\"email\"]","animeforlive@proton.me");
+		driver_wait(driver, "//*[@id=\"pass\"]",10).click();
+		textbox_schreiben_xpath(driver, "//*[@id=\"pass\"]","9BxTJTLF626AETWyUWVe");
+		//driver_wait(driver, "//*[@id=\"u_0_5_ic\"]",10).click();
+		WebElement w = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, '" + "_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy" + "')]")));
+	    w.click();
+	    
+	    Thread.sleep(5000);
+	   // driver.quit();	
+	}
+	
+	
+	
+	private static void button_click_and_write(WebDriver wd, String xpath,String text) {
+	WebElement d = driver_wait(wd, xpath,10);
+    d.click();
+	textbox_schreiben_xpath(wd, xpath,text);
 	}
 	
 	private static void button_click(WebDriver wd, String xpath) {
