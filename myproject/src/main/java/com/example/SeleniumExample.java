@@ -16,10 +16,9 @@ public class SeleniumExample {
 		driver.manage().deleteAllCookies();
 		driver.get("https://twitter.com/home");
 		
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-	    WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]")));
+		WebElement d = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]",10);
 		
-	    element.click();
+	    d.click();
 		
 
 		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input","animeforlive@proton.me");
@@ -27,9 +26,11 @@ public class SeleniumExample {
 	     
 	    if(driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[1]/div/h1/span/span")).getAttribute("innerHTML") == "Gib deine Telefonnummer oder deinen Nutzernamen ein") {
 	    	button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input");
-	    	WebElement f = driver.switchTo().activeElement();
-	    	//textbox_schreiben_classname(driver, "/html/body/div[1]/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input","animeforlive@proton.me");
-	 	   f.sendKeys("test");
+	    	
+	    	WebElement a = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input",10);
+			
+		    a.click();
+		    a.sendKeys("r");
 	    }
 	   
 	    
@@ -54,6 +55,11 @@ public class SeleniumExample {
 	private static void textbox_schreiben_classname(WebDriver wd ,String classname ,String text) {
 	      WebElement textBox = wd.findElement(By.className(classname));
 	      textBox.sendKeys(text);
+	}
+	private static WebElement driver_wait(WebDriver wd ,String xpath, int time) {
+		WebDriverWait wait = new WebDriverWait(wd, time);
+	    WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(xpath)));
+	    return element;
 	}
 	
 }
