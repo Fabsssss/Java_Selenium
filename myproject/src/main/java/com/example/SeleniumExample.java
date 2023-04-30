@@ -1,11 +1,15 @@
 package com.example;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public class SeleniumExample {
 	public static void main(String[] args) {
@@ -17,21 +21,44 @@ public class SeleniumExample {
 		driver.get("https://twitter.com/home");
 		
 		WebElement d = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]",10);
-		
 	    d.click();
-		
-
 		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input","animeforlive@proton.me");
 	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div");
 	     
-	    if(driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[1]/div/h1/span/span")).getAttribute("innerHTML") == "Gib deine Telefonnummer oder deinen Nutzernamen ein") {
-	    	button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input");
-	    	
-	    	WebElement a = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input",10);
-			
-		    a.click();
-		    a.sendKeys("r");
-	    }
+	    
+	    WebElement a = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input",10);
+	    a.click();
+		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input","animeforli28455");
+	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div/div/div");
+	   
+
+		
+		//		driver.quit();	    
+	    
+	   
+	    WebElement b = driver_wait(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input",10);
+	    b.click();
+		textbox_schreiben_xpath(driver, "/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input","AUiHzB3Jo8iCKTCT5B9S");
+	    button_click(driver,"/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div");
+	   
+	    List<WebElement> l = driver.findElements(By.xpath("/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div"));
+		if(l.size()> 0) {
+			button_click(driver,"/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div");
+		}
+		
+	    List<WebElement> l1 = driver.findElements(By.xpath("/html/body/div[1]/div/div/div[1]/div/div/div/div/div/div[2]/div[2]/div"));
+		if(l1.size()> 0) {
+			button_click(driver,"/html/body/div[1]/div/div/div[1]/div/div/div/div/div/div[2]/div[2]/div");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	    //}
 	   
 	    
 	    
@@ -40,7 +67,7 @@ public class SeleniumExample {
 	    //		driver.findElement(By.name("q")).sendKeys("Browserstack Guide"); //name locator for text box
 //		WebElement searchbutton = driver.findElement(By.name("btnK"));//name locator for google search
 //		searchbutton.click();
-//		driver.quit();
+
 	    
 	}
 	
