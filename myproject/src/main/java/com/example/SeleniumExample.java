@@ -57,9 +57,12 @@ public class SeleniumExample {
 	    System.out.println("pquhegrpowejriofvw");
 	    
 	    WebDriverWait wait = new WebDriverWait(driver, 10);
-	    WebElement q = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, '" + "_42ft _4jy0 _al66 _4jy3 _4jy1 selected _51sy" + "')]")));
+	    WebElement q = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, '" + "x9f619 x1n2onr6 x1ja2u2z x78zum5 xdt5ytf x193iq5w xeuugli x1iyjqo2 xs83m0k x150jy0e x1e558r4 xjkvuk6 x1iorvi4 xdl72j9" + "')]")));
 	    q.click();
 	    
+	    WebElement r = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, '" + "_42ft _4jy0 _al66 _4jy3 _4jy1 selected _51sy" + "')]")));
+	    r.click();	
+	    ////*[@id="u_0_j_jL"]
 	    
 	  //*[@id="u_0_j_OB"]//*[@id="u_0_j_NG"]
 	  
@@ -67,12 +70,14 @@ public class SeleniumExample {
 	    
 	    
 	    
-	    driver_wait(driver, "//*[@id=\"email\"]",10).click();
-		textbox_schreiben_xpath(driver, "//*[@id=\"email\"]","animeforlive@proton.me");
-		driver_wait(driver, "//*[@id=\"pass\"]",10).click();
-		textbox_schreiben_xpath(driver, "//*[@id=\"pass\"]","9BxTJTLF626AETWyUWVe");
-		//driver_wait(driver, "//*[@id=\"u_0_5_ic\"]",10).click();
-		WebElement w = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, '" + "_42ft _4jy0 _6lth _4jy6 _4jy1 selected _51sy" + "')]")));
+	    driver_wait(driver, "//*[@id=\":rs:\"]",10).click();
+		textbox_schreiben_xpath(driver, "//*[@id=\":rs:\"]","animeforlive@proton.me");
+		
+		driver_wait(driver, "//*[@id=\":ru:\"]",10).click();
+		textbox_schreiben_xpath(driver, "//*[@id=\":ru:\"]","9BxTJTLF626AETWyUWVe");
+		
+		
+		WebElement w = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(@class, '" + "x1n2onr6 x1ja2u2z x78zum5 x2lah0s xl56j7k x6s0dn4 xozqiw3 x1q0g3np xi112ho x17zwfj4 x585lrc x1403ito x972fbf xcfux6l x1qhh985 xm0m39n x9f619 xn6708d x1ye3gou xtvsq51 x1fq8qgq" + "')]")));
 	    w.click();
 	    
 	    Thread.sleep(5000);
